@@ -1,7 +1,14 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, UploadFile, File
 
 router = APIRouter()
 
 @router.post("/emotion")
-async def emotion(payload: dict):
-    return
+async def emotion(image: UploadFile = File(...)):
+    
+    # these datas gonna be received from the IA model
+    emotion: str
+    embedding: list
+
+    return {"emotion": emotion,
+            "embedding": embedding
+            }
