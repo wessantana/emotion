@@ -1,3 +1,5 @@
 fastapi
 streamlit
 python-dotenv
+python-multipart
+httpx
