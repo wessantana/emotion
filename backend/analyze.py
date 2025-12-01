@@ -2,17 +2,17 @@ from fastapi import APIRouter, UploadFile, File, Form, HTTPException, status
 import httpx
 from dotenv import load_dotenv
 import os
-from vision.vision import analyze_image
-from nlp.nlp import analyze_text
-from fusion.mlp import predict_engagement
-from llm.llm import generate_recommendation
+from backend.vision.vision import analyze_image
+from backend.nlp.nlp import analyze_text
+from backend.fusion.mlp import predict_engagement
+from backend.llm.llm import generate_recommendation
 
 load_dotenv()
 API_URL = os.getenv("API_URL")
 
 router = APIRouter()
 
-@router.post()
+@router.post("")
 async def analyze(image: UploadFile = File(...), text_input: str = Form(...)):
 
     # here I need to verify if the image and the text are valid to, after that, call the functions

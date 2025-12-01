@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 from fastapi import APIRouter
 from backend import analyze
-from fusion import mlp
-from llm import llm
-from nlp import nlp
-from vision import vision
+from backend.fusion import mlp
+from backend.llm import llm
+from backend.nlp import nlp
+from backend.vision import vision
 
 app = FastAPI()
 
